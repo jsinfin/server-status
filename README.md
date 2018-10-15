@@ -8,7 +8,7 @@ A reusable React component that shows you the status of your server; on or off
 
 `npm install --save @jsinfin/server-status`
 
-### Is `@jsinfin/...' a Mono Repo?
+### Is `@jsinfin/...` a Mono Repo?
 
 Well, yes and no. `<ServerStatus />` is one component out of the numerous to come under the scope `@jsinfin`. At the core of the build is:
 
@@ -16,27 +16,26 @@ Well, yes and no. `<ServerStatus />` is one component out of the numerous to com
 * Storybook
 * Usual Suspects
 
-However, as an author/publisher I decided to release each individual component to the world before releasing the entire collection
-(where you could sample components via storybook + addons)
+So, yes the entire build process is geared towards the mono-repo style. However, as an author/publisher I decided to release each individual
+component to the world before releasing the entire collection (where you could sample components via storybook + addons) and build.
 
 #### Parcel Bundler
 
 I have my reasons, some will agree, others might not. Within this effort I chose to use Parcel for each individual component that I 
 open-sourced on Github from scoped `@jsinfin` packages as a way for consumers to not only get the source, but to also view and 
-interact with them.
+interact with each particular scoped component.
 
-#### Other Implications
+#### Implications
 
 Instead of storybook documentation initially please read the docs below. Once the final release is out you'll have Storybook to fiddle
-around with.
-
-Of course, *this is just for Github* - the components are distributed from NPM, and published on NPM.
+around with. Of course, *this is just for Github* - the components are distributed from NPM, and published on NPM.
 
 #### Installation
 
+* `git clone server-status`
 * `npm install`
 * You'll need parcel, so `npm install parcel -g`, you can install it globally or add it to `package.json`
-* Each repo will have an `index.html`. From the command line just run: `$ parcel index.html` and you're good to go
+* Each repo will have an `index.html`. From the command line just run: `$ parcel index.html` to view the component.
 
 
 ### Prop Types & Defaults
@@ -51,14 +50,12 @@ Of course, *this is just for Github* - the components are distributed from NPM, 
 
 `<ServerStatus />` is a stateless component, keep that in mind.
 
-`<ServerStatus />` takes in one variable from the outside world that controls the condition to the ternary in the `backgroundColor` prop. 
+It takes in one variable from the outside world that controls the condition to the ternary in the `backgroundColor` prop. 
 This is usually set to `false` or `off` as default, but it's up to you.
 
 `backgroundColor={_*condition*_ ? '#14f1b9' : '#FF0000'}`
 
-> This variable needs to be created by the consumer, /ie: you:
-
-You can then easily toggle that variable or even add it to state on a class level component whilst returning the `<ServerStatus />` 
+> This variable needs to be created by the consumer, /ie: you. You can then easily toggle that variable or even add it to state on a class level component whilst returning the `<ServerStatus />` 
 component:
 
 ```
@@ -104,7 +101,7 @@ class Settings {
 export default Settings
 ```
 
-...then:
+...then in your component:
 
 ```
 import ServerStatus from '@jsinfin/server-status'
@@ -133,7 +130,7 @@ server.listen(port, (err) => {
 }
 ```
 
-> Basic usage: On / Off
+#### Basic Usage
 
 ```
 import ServerStatus from '@jsinfin/server-status'
@@ -161,7 +158,7 @@ import settings from 'config/settings'
 
 ```
 
-> Override Defaults Props
+#### Overriding Default Props
 
 ```
 import ServerStatus from '@jsinfin/server-status'
